@@ -10,7 +10,7 @@ namespace WebApi.Controllers.v1
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
-            return Ok(command);
+            return Ok(await Mediator.Send(command));
         }
         
         [HttpGet]
